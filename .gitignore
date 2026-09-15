@@ -3,7 +3,11 @@
 .env.local
 .env.*.local
 
-# Docker data
+# Docker data - this repo's compose file mounts these as ./data/*,
+# not ./openvpn-data/* (that's the separate build/source repo). This
+# directory holds the live PKI (CA key, server key, any client keys)
+# and must never be committed.
+data/
 openvpn-data/
 openvpn-backups/
 users/

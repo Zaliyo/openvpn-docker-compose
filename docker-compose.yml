@@ -14,7 +14,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./data/conf:/etc/openvpn/pki
+      - ./data/conf:/etc/openvpn
       - ./data/logs:/var/log/openvpn
       - ./data/backups:/backups
       - ./users:/opt/users

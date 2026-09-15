@@ -1,0 +1,22 @@
+# First-time setup
+docker-compose exec openvpn init-pki
+docker-compose restart openvpn
+
+# Create clients
+docker-compose exec openvpn create-clients alice
+docker-compose exec openvpn create-clients bob charlie
+
+# List clients with expiry dates
+docker-compose exec openvpn list-clients
+
+# Check system status
+docker-compose exec openvpn status
+
+# Renew expiring certificates
+docker-compose exec openvpn renew-clients alice
+
+# Backup PKI with encryption
+docker-compose exec openvpn backup-pki
+
+# Revoke a client
+docker-compose exec openvpn revoke-clients baduser
